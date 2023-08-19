@@ -9,12 +9,12 @@ conda create -n TGL_fastAPI python=3.9
 conda activate TGL_fastAPI
 ```
 
-3. Exportar el ambiente creado a un archivo `yml`. Esto se realiza sola primera vez; luego se actualiza el archivo.
+3. Exportar el ambiente creado a un archivo `yml`. Esto se realiza cada que se agregan dependencias al ambiente. 
  ```bash
 conda env export > requirements.yml
 ```
 
-4. Actualizar el archivo `requirements.yml` luego de agregar dependencias al ambiente de desarrollo de conda. 
+4. Actualizar el ambiente a partir de las dependencias que se especifican en el archivo `requirements.yml`. Cada que se bajen cambios habrá que actualizar el ambiente para que las dependencias que sean requeridas puedan servir. 
  ```bash
 conda env update -f requirements.yml
 ```
