@@ -24,3 +24,9 @@ conda env update -f requirements.yml
 git pull origin  main
 ```
 También puede hacerse directamente desde el `source control` de visual studio code, en el área de de `branches`. 
+
+6. Para correr una app de fastapi usando una especie de demonio (en este caso, uvicorn), se debe correr lo siguiente:
+```bash
+uvicorn main:app
+```
+main es el archivo principal `main.py` y `app` es la instancia de fastapi creada en `main.py`.
