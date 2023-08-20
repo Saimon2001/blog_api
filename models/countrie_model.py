@@ -6,4 +6,4 @@ countries = Table('countries', meta,
               Column('countrie_id', Integer, primary_key = True),
               Column('countrie_name', String(30)))
 
-meta.create_all(engine)
+meta.create_all( bind = engine, tables=[countries])

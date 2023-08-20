@@ -1,9 +1,25 @@
 from fastapi import APIRouter
 from config.db_conection import conn
 from models.main import countries
+from schemas.main import Countrie
 
 countrie = APIRouter()
 
-@countrie.get("/countrie")
+@countrie.get("/countries")
 def get_countries():
-    return conn.execute( countries.select())
+    #result = conn.execute(countries.select()).fetch
+    result = conn.execute('SELECT * FROM countries').fetchall()
+    return result
+
+@countrie.post("/countries")
+def create_countrie( countrie: Countrie):
+    new_countrie = {
+        "countrie_id": countrie.countrie_id,
+        "countrie_name": countrie.countrie_name
+    }
+    conn.execute( countries.insert().values(new_countrie))
+    return new_countrie
+
+
+
+
