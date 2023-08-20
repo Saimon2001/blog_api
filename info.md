@@ -30,3 +30,5 @@ También puede hacerse directamente desde el `source control` de visual studio c
 uvicorn main:app --reload
 ```
 main es el archivo principal `main.py` y `app` es la instancia de fastapi creada en `main.py`.
+
+7. Los `main.py` en cada subcarpeta hacen más simple, clara y evitan la redundancia de lineas cuando se realiza la importación de modulos a otras partes del proyecto.
