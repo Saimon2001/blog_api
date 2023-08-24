@@ -7,7 +7,7 @@ countrie = APIRouter()
 
 @countrie.get("/countries")
 def get_countries():
-    #result = conn.execute(countries.select()).fetch
+    #result = conn.execute(countries.select()).fetcall()
     result = conn.execute('SELECT * FROM countries').fetchall()
     return result
 
